@@ -29,3 +29,31 @@ SUBSTITUTE	                  Replace
 SUM	                          Add
 TRIM	                        Trim
 UPPER	                        Uppercase
+
+=====================================================VARIABLES==================================================================================================================
+Variables are essentially ‘named containers’, where a user-defined name is applied to a defined entity, either a constant or function. Variable names are case-insensitive and can include characters or numbers, but not spaces or commas.
+Variable names must begin with @ and include at least one other letter, number or underscore. 
+
+#Eg.   var @firstName, @lastName, @membershipExpiryDate
+
+NOTE: AMPscript is a loosely typed language and as a result, the interpreter does not enforce variables to be declared. However, it’s best practice to do so, to ensure the variable name is added to the Variables Dictionary.
+=====================================================SETTING-VARIABLES==========================================================================================================
+
+Once a variable is declared, it can be set. Variables are set using a syntax that comprises of four elements:
+
+the set keyword
+the variable name
+a single equals symbol (=)
+a personalization string, constant or AMPscript function (which can contain nested functions).
+Refer to the example below, where variables are set as a personalization string (@firstName), AMPscript function (@localDate) and constant (@promotionEndDate):
+#Eg.
+
+%%[
+
+var @firstName, @localDate, @promotionEndDate
+
+set @firstName = FirstName
+set @localDate = SystemDateToLocalDate(Now())
+set @promotionEndDate = '10/15/2018'
+
+]%%
